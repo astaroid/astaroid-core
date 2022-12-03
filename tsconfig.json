@@ -1,0 +1,12 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@utils/*": ["src/utils/*"]
+    }
+  },
+  "exclude": [
+    "./src/test"
+  ],
+}
