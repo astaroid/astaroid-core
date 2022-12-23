@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "astaroid"
-    ]
+    ],
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/MY%20PC/Desktop/code%20book/open_Noonoo/astaroid-core/.github/workflows/test_action.yml"
+    }
 }
