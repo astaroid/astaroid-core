@@ -1,0 +1,21 @@
+name: test-action
+run-name: Testing project workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test-project:
+    name: Test project
+    runs-on: ubuntu-latest
+    if: github.repository == 'astaroid/astaroid-core'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - run: yarn run dev
+      - run: yarn run test

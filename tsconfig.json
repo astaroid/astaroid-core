@@ -7,6 +7,6 @@
     }
   },
   "exclude": [
-    "./src/test"
+    "src/test/**/*.test.ts"
   ],
 }
