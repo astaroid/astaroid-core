@@ -1,4 +1,4 @@
-export default (statusCode:number, headers:HeadersInit = { "Content-Type": "application/json" }, data:App.ApiResponseData|Blob|FormData|ArrayBuffer): Response => {
+export default (statusCode:number, data:App.ApiResponseData|Blob|FormData|ArrayBuffer, headers:HeadersInit = { "Content-Type": "application/json" }): Response => {
   if (data instanceof Blob ||data instanceof FormData ||data instanceof ArrayBuffer) {
     return new Response(data, {
       status: statusCode,
