@@ -6,13 +6,13 @@ on:
       - main
 jobs:
   start-project:
-    name: Start project
+    name: Start project server
+    runs-on: ubuntu-latest
     env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
       DB_URL: ${{ secrets.DB_URL }}
-      API_KEY: ${{ secrets.API_KEY }}
-    runs-on: ubuntu-latest
+      API_KEY: ${{ secrets.API_KEY }} 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -25,8 +25,8 @@ jobs:
   test-project:
     name: Test project
     runs-on: ubuntu-latest
-    if: ${{ always() }}
-    needs: start-project 
+    env:
+      API_KEY: ${{ secrets.API_KEY }} 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -35,4 +35,5 @@ jobs:
       - uses: borales/actions-yarn@v4
         with:
           cmd: install
+      - run: sleep 10s
       - run: yarn run test
