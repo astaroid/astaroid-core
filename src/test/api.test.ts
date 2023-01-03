@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv'
 import axios from "axios"
+import { test, expect } from "vitest"
 
 interface ApiResponseData {
     ok: boolean,
