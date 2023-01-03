@@ -12,7 +12,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "jest"
+    "test": "vitest"
   },
   "dependencies": {
     "@js-temporal/polyfill": "^0.4.3",
